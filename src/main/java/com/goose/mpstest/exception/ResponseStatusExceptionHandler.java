@@ -10,7 +10,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class ResponseStatusExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(AirplaneException.class)
-    protected ResponseEntity<Object> handleCinemaException(AirplaneException e) {
+    protected ResponseEntity<Object> handleAirplaneException(AirplaneException e) {
         e.printStackTrace();
         return ResponseEntity.status(e.getErrorType().getHttpError())
                 .contentType(MediaType.APPLICATION_JSON)

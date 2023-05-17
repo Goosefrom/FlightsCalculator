@@ -16,7 +16,5 @@ public interface AirplaneService {
 
     AirplaneDTO addAirplane(Airplane airplane);
 
-    AirplaneDTO updateAirplane(Long id, Airplane airplane);
-
     void deleteAirplane(Long id);
 }
