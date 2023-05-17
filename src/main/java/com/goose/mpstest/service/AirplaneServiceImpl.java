@@ -47,35 +47,6 @@ public class AirplaneServiceImpl implements AirplaneService {
     }
 
     @Override
-    public AirplaneDTO updateAirplane(Long id, Airplane o1) {
-        Airplane o2 = repository.findById(id)
-                .orElseThrow(() -> new AirplaneException(ErrorType.NOT_FOUND, "airplane with this id not found"));
-
-        if (!o1.equals(o2)) {
-            AirplaneCharacteristics o1Characteristics = o1.getAirplaneCharacteristics();
-            AirplaneCharacteristics o2Characteristics = o2.getAirplaneCharacteristics();
-            if (!o1Characteristics.equals(o2Characteristics))   o2.setAirplaneCharacteristics(o2Characteristics);
-
-            TemporaryPoint o1TemporaryPoint = o1.getPosition();
-            TemporaryPoint o2TemporaryPoint = o2.getPosition();
-            if (!o1TemporaryPoint.equals(o2TemporaryPoint)) o2.setPosition(o2TemporaryPoint);
-
-            List<Flight> o1Flights = o1.getFlights();
-            List<Flight> o2Flights = o2.getFlights();
-            o1Flights.forEach(flight -> {
-                if (!o2Flights.contains(flight)) o2Flights.add(flight);
-            });
-            o2.setFlights(o2Flights);
-
-        }
-
-        repository.deleteById(id);
-        AirplaneDTO dto = mapper.toDTO(repository.save(o2));
-        log.info("Airplane update id={}", dto.getId());
-        return dto;
-    }
-
-    @Override
     public void deleteAirplane(Long id) {
         if (!repository.existsById(id))
             throw new AirplaneException(ErrorType.ALREADY_OCCUPIED, "airplane with this id not found");
