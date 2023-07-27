@@ -1,5 +1,6 @@
 # FLight Calculator app
-Web Application for calculating paths through point list in three-dimensional flat space and saving it as temporal point list using constants:
+Web Application for calculating paths through point list in three-dimensional flat space and saving it as temporal point list. 
+Calculations use constants:
 1. precision for saving temporal plane point through path = 1 second
 2. airplane characteristics are individual for each plane and declaring in model class [AirplaneCharacteristics](src/main/java/com/goose/calculator/model/AirplaneCharacteristics.java)
 
