@@ -1,7 +1,7 @@
 # FLight Calculator app
 Web Application for calculating paths through point list in three-dimensional flat space with constants:
-1. precision = 1 second
-2. airplane characteristics individual for each plane which declare in model class [AirplaneCharacteristics](src/main/java/com/goose/calculator/model/AirplaneCharacteristics.java)
+1. precision for saving temporal plane point through path = 1 second
+2. airplane characteristics are individual for each plane and declaring in model class [AirplaneCharacteristics](src/main/java/com/goose/calculator/model/AirplaneCharacteristics.java)
 
 ##Stack
 1. mongodb as database
