@@ -4,7 +4,7 @@ Calculations use constants:
 1. precision for saving temporal plane point through path = 1 second
 2. airplane characteristics are individual for each plane and declaring in model class [AirplaneCharacteristics](src/main/java/com/goose/calculator/model/AirplaneCharacteristics.java)
 
-##Stack
+## Stack
 1. mongodb as database
 2. spring boot as backend
 3. react, mui and three.js as frontend
