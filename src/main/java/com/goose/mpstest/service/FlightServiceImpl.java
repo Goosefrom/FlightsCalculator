@@ -46,7 +46,7 @@ public class FlightServiceImpl implements FlightService{
     }
 
     @Override
-    public Flight calculateFlight(Long id, List<WayPoint> wayPoints) {
+    public FlightDTO calculateFlight(Long id, List<WayPoint> wayPoints) {
         Airplane airplane = airplaneRepository.findById(id)
                 .orElseThrow(() -> new AirplaneException(ErrorType.NOT_FOUND, "airplane not found"));
 
@@ -60,7 +60,7 @@ public class FlightServiceImpl implements FlightService{
         airplane.setFlights(flights);
         airplaneRepository.save(airplane);
         log.info("Airplane (id={}) updated with new flight", id);
-        return lastFlight;
+        return mapper.toDTO(lastFlight);
     }
 
     @Override

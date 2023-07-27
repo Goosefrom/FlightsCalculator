@@ -12,7 +12,7 @@ public interface FlightService {
 
     Flight getFlight(Long id, Long number);
 
-    Flight calculateFlight(Long id, List<WayPoint> wayPoints) throws Exception;
+    FlightDTO calculateFlight(Long id, List<WayPoint> wayPoints) throws Exception;
 
     void deleteFlight(Long id, Long number);
 }

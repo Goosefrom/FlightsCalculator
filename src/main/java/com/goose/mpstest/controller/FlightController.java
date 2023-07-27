@@ -29,7 +29,7 @@ public class FlightController {
     }
 
     @PostMapping("/calculate")
-    public Flight calculateFlight(@PathVariable Long id, @RequestBody List<WayPoint> wayPoints) throws Exception {
+    public FlightDTO calculateFlight(@PathVariable Long id, @RequestBody List<WayPoint> wayPoints) throws Exception {
         return flightService.calculateFlight(id, wayPoints);
     }
 
