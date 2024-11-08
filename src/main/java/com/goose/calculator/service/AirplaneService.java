@@ -2,6 +2,8 @@ package com.goose.calculator.service;
 
 import com.goose.calculator.dto.AirplaneDTO;
 import com.goose.calculator.model.Airplane;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 

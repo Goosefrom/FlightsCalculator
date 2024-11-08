@@ -9,11 +9,9 @@ import lombok.*;
  * {@code rateCourseChange}: degree/s;
  */
 
-@Getter
-@Setter
-@EqualsAndHashCode
-@AllArgsConstructor
+@Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class AirplaneCharacteristics {
         private double maxSpeed;
         private double maxAcceleration;

@@ -8,9 +8,7 @@ import lombok.*;
  * {@code flightAltitude} z;<p>
  * {@code flightSpeed}: m/s;
  */
-@Getter
-@Setter
-@EqualsAndHashCode
+@Data
 @AllArgsConstructor
 public class WayPoint {
         private double latitude;

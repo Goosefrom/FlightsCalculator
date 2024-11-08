@@ -6,12 +6,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
-@Getter
-@Setter
-@EqualsAndHashCode
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
 @Document
+@NoArgsConstructor
+@AllArgsConstructor
 public class Airplane {
         @Id
         private Long id;
@@ -22,10 +20,8 @@ public class Airplane {
         public Airplane(AirplaneCharacteristics airplaneCharacteristics,
                         TemporaryPoint position,
                         List<Flight> flights) {
-                super();
                 this.airplaneCharacteristics = airplaneCharacteristics;
                 this.position = position;
                 this.flights = flights;
-
         }
 }

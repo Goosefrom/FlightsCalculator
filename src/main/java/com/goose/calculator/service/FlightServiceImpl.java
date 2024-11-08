@@ -24,9 +24,7 @@ import java.util.List;
 public class FlightServiceImpl implements FlightService{
 
     private final AirplaneRepository airplaneRepository;
-
     private final PlaneCalculation planeCalculation;
-
     private final FlightMapper mapper;
 
     @Override

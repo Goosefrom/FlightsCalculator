@@ -9,11 +9,8 @@ import lombok.*;
  * {@code flightSpeed}: m/s;<p>
  * {@code course}: degree;
  */
-@Getter
-@Setter
-@EqualsAndHashCode
+@Data
 @AllArgsConstructor
-@NoArgsConstructor
 public class TemporaryPoint {
         private double latitude;
         private double longitude;

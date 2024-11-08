@@ -116,53 +116,6 @@ public class PlaneCalculation {
                     y1 = currentPosition.getLongitude() + currentPosition.getFlightSpeed() * dt * cos(toRadians(angleY)) + 0.5 * aY * pow(dt, 2);
                     sZ = currentPosition.getFlightSpeed() * dt * cos(toRadians(angleZ)) + 0.5 * aZ * pow(dt, 2);
                     z1 = currentPosition.getFlightAltitude() + (abs(sZ) <= (characteristics.getRateAltitudeChange() * dt) ? sZ : characteristics.getRateAltitudeChange() * dt * sZ / abs(sZ));
-/*
-                    //calculate speed and traveled path for this dt
-                    if (timeToReachV > 0) {
-                        dtVNow = timeToReachV < 1 ? dt - 1 + timeToReachV : dt;
-                        v = currentPosition.getFlightSpeed() + acceleration * dtVNow;
-                        s = currentPosition.getFlightSpeed() * dtVNow + 0.5 * acceleration * pow(dtVNow, 2);
-                        timeToReachV -= min(1, timeToReachV);
-                    }
-                    else {
-                        v = nextWayPoint.getFlightSpeed();
-                        s += v;
-                    }
-
-                    //calculate X, Y and Z positions for this dt
-                    // X
-                    if (timeToReachX > 0) {
-                        sX = s;
-                        if (timeToReachX < 1) {
-                            if (timeToReachV > 0) sX = currentPosition.getFlightSpeed() * (dt - 1 + timeToReachX) + 0.5 * acceleration * pow(dt - 1 + timeToReachX, 2.0);
-                            else sX = s - v + v * timeToReachX;
-                        }
-                        x1 = currentPosition.getLatitude() + sX * cos(toRadians(angleX));
-                        timeToReachX -= min(1, timeToReachX);
-                    }
-                    // Y
-                    if (timeToReachY > 0) {
-                        sY = s;
-                        if (timeToReachY < 1) {
-                            if (timeToReachV > 0) sY = currentPosition.getFlightSpeed() * (dt - 1 + timeToReachY) + 0.5 * acceleration * pow(dt - 1 + timeToReachY, 2.0);
-                            else sY = s - v + v * timeToReachY;
-                        }
-                        y1 = currentPosition.getLongitude() + sY * cos(toRadians(angleY));
-                        timeToReachY -= min(1, timeToReachY);
-                    }
-                    // Z
-                    if(timeToReachZ > 0) {
-                        sZ = s;
-                        if (timeToReachZ < 1) {
-                            if (timeToReachV > 0) sZ = currentPosition.getFlightSpeed() * (dt - 1 + timeToReachZ) + 0.5 * acceleration * pow(dt - 1 + timeToReachZ, 2.0);
-                            else sZ = s - v + v * timeToReachZ;
-                        }
-                        z1 = currentPosition.getFlightAltitude()
-                                + (abs(sZ) > (characteristics.getRateAltitudeChange() * dt) ? characteristics.getRateAltitudeChange() * dt * sZ / abs(sZ) : sZ)
-                                * cos(toRadians(angleZ));
-                        timeToReachZ -= min(1, timeToReachZ);
-                    }
-*/
 
                     //add new point to list
                     System.out.println(x1 + " " + y1 + " " + z1 + " " + v + " " + angleY + ";  dcourse " + dCourse + "; a " + acceleration);

@@ -12,9 +12,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
 import javax.annotation.PostConstruct;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Configuration
 @EnableScheduling
@@ -71,7 +69,7 @@ public class Scheduler {
 
     }
 
-    private void calculate(Optional<Airplane> optAirplane, List<WayPoint> wayPoints) throws Exception {
+    protected void calculate(Optional<Airplane> optAirplane, List<WayPoint> wayPoints) throws Exception {
         if (optAirplane.isPresent()) {
             Airplane airplane = optAirplane.get();
             List<Flight> flights = airplane.getFlights();
